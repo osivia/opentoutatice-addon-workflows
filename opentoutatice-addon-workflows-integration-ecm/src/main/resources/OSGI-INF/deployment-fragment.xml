@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+
+<fragment version="1">
+ 	
+	<require>fr.toutatice.ecm.platform.web</require>
+	
+	<extension target="faces-config#NAVIGATION">
+		
+		<navigation-case>
+			<from-outcome>choose_wf</from-outcome>
+			<to-view-id>/pv_workflows/choose_wf.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>current_task</from-outcome>
+			<to-view-id>/pv_workflows/current_task.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>action_done</from-outcome>
+			<to-view-id>/pv_workflows/action_done.xhtml</to-view-id>
+		</navigation-case>
+		
+	</extension>
+
+	<extension target="pages#PAGES">
+	</extension>
+
+	<extension target="application#MODULE">
+		<module>
+			<java>${bundle.fileName}</java>
+		</module>
+	</extension>
+	
+	<install>
+		<unzip from="${bundle.fileName}" to="/">
+			<include>nuxeo.war/**</include>
+		</unzip>
+
+		<!-- append l10n files -->
+		<delete path="${bundle.fileName}.tmp" />
+		<mkdir path="${bundle.fileName}.tmp" />
+
+		<unzip from="${bundle.fileName}" to="${bundle.fileName}.tmp">
+			<include>OSGI-INF/l10n/**</include>
+		</unzip>
+
+		<append from="${bundle.fileName}.tmp/OSGI-INF/l10n/messages_fr.properties"
+			to="nuxeo.war/WEB-INF/classes/messages_fr.properties" addNewLine="true" />
+		<append from="${bundle.fileName}.tmp/OSGI-INF/l10n/messages_en.properties"
+			to="nuxeo.war/WEB-INF/classes/messages_en.properties" addNewLine="true" />
+
+		<delete path="${bundle.fileName}.tmp" /> 
+		
+	</install>
+
+</fragment>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<component name="fr.toutatice.ecm.platform.wf.integration.theme">
+
+	<require>fr.toutatice.ecm.platform.responsive.portalviews.theme</require>
+
+	<extension target="org.nuxeo.theme.services.ThemeService"
+		point="applications">
+
+		<application root="${org.nuxeo.ecm.contextPath}"
+			template-engine="jsf-facelets">
+
+			<view id="/pv_workflows/choose_wf.xhtml">
+				<theme>galaxy/popup</theme>
+			</view>
+			
+			<view id="/pv_workflows/current_task.xhtml">
+				<theme>galaxy/popup</theme>
+			</view>
+
+		</application>
+
+	</extension>
+
+</component>
