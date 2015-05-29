@@ -2,32 +2,41 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
                       
 <nxthemes:composition xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:nxthemes="http://nuxeo.org/nxthemes"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:c="http://java.sun.com/jstl/core"
-	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
-	xmlns:nxh="http://nuxeo.org/nxweb/html"
-	xmlns:nxu="http://nuxeo.org/nxweb/util"
-	xmlns:nxl="http://nuxeo.org/nxforms/layout"
-	xmlns:nxd="http://nuxeo.org/nxweb/document">
+    xmlns:nxthemes="http://nuxeo.org/nxthemes"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:c="http://java.sun.com/jstl/core"
+    xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+    xmlns:nxh="http://nuxeo.org/nxweb/html"
+    xmlns:nxu="http://nuxeo.org/nxweb/util"
+    xmlns:nxl="http://nuxeo.org/nxforms/layout"
+    xmlns:nxd="http://nuxeo.org/nxweb/document">
+    
+     <ui:define name="header_scripts">
+        <script src="#{baseURL}scripts/pv_task_custom.js"></script>
+        <script src="#{baseURL}scripts/postmessage.js"></script>
+        <script type="text/javascript">
+            var parent_url = '#{pageBean.fromUrl}';
+            var currentDocumentId = '#{currentDocument.id}';
+            var isLive = '#{documentActions.live}';
+        
+            XD.postMessage('currentDocumentId=' + currentDocumentId, parent_url,
+                    parent);
+            XD.postMessage('live=' + isLive, parent_url, parent);
+        </script>
+    </ui:define>
+    
+    <ui:define name="body">
+        
+        <div class="container">
+            <div class="ttc-form-control">
+            <ui:include src="/incl/pv_message_banner.xhtml" />
+                <nxl:widget name="current_route_panel_right" mode="view" />
+                <nxl:widget name="current_route_panel_left" mode="view" />
+            </div>
+        </div>
 
-	
-	<ui:define name="header_scripts">
-		<script src="#{baseURL}scripts/pv_task_custom.js"></script>
-	</ui:define>
-	
-	<ui:define name="body">
-		
-		<div class="container">
-			<div class="ttc-form-control">
-			<ui:include src="/incl/pv_message_banner.xhtml" />
-				<nxl:widget name="current_route_panel_right" mode="view" />
-				<nxl:widget name="current_route_panel_left" mode="view" />
-			</div>
-		</div>
-
-	</ui:define>	
-	
+    </ui:define>    
+    
 </nxthemes:composition>
