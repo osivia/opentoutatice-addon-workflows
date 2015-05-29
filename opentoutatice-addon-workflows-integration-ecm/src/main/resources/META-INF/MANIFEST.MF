@@ -4,5 +4,6 @@ Bundle-Name: OpenToutatice Workflows Integration
 Bundle-SymbolicName: fr.toutatice.ecm.platform.workflows.integration;singleton:=true
 Bundle-Localization: plugin
 Bundle-Category: stateful
-Nuxeo-Component: OSGI-INF/extensions/theme-contrib.xml
+Nuxeo-Component: OSGI-INF/extensions/theme-contrib.xml,
+ OSGI-INF/extensions/workflows-service-contrib.xml
  

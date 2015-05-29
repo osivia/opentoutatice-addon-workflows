@@ -16,7 +16,7 @@
 			<view id="/pv_workflows/current_task.xhtml">
 				<theme>galaxy/popup</theme>
 			</view>
-
+			
 		</application>
 
 	</extension>

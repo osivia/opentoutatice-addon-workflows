@@ -66,11 +66,9 @@ public class IntegrationRoutingTaskActionsBean extends ToutaticeRoutingTaskActio
 
             String clickedButton = getClickedButton();
 
-
             WidgetsAdapterService aSrv = (WidgetsAdapterService) Framework.getService(WidgetsAdapterService.class);
 
             if (aSrv.isInPortalViewContext()) {
-
 
                 if (WorkflowsConstants.CONTINUE_VALIDATION_ACTIONS.contains(clickedButton)) {
                     view = WorkflowsConstants.PV_CURRENT_TASK;
