@@ -30,6 +30,8 @@ public interface WorkflowsConstants {
     
     /** TasDoc type. */
     String TASKDOC_TYPE = "TaskDoc";
+    /** RouteNode type. */ 
+    String ROUTE_NODE_TYPE = "RouteNode";
 
     /** Validation workflows. */
     List<String> VALIDATION_WORKFLOWS = new ArrayList<String>(2) {
