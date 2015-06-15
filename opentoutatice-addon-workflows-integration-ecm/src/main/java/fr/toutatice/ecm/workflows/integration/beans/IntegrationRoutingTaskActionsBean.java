@@ -21,24 +21,17 @@ package fr.toutatice.ecm.workflows.integration.beans;
 
 import static org.jboss.seam.ScopeType.CONVERSATION;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Install;
 import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Scope;
 import org.nuxeo.ecm.core.api.ClientException;
 import org.nuxeo.ecm.core.api.DocumentModel;
 import org.nuxeo.ecm.core.api.IdRef;
-import org.nuxeo.ecm.platform.routing.api.DocumentRoute;
 import org.nuxeo.ecm.platform.task.Task;
-import org.nuxeo.ecm.platform.ui.web.util.SeamComponentCallHelper;
 import org.nuxeo.ecm.webapp.action.MainTabsActions;
 import org.nuxeo.runtime.api.Framework;
 
 import fr.toutatice.ecm.platform.service.portalviews.adapter.WidgetsAdapterService;
-import fr.toutatice.ecm.platform.service.workflows.ToutaticeWorkflowServiceImpl;
 import fr.toutatice.ecm.platform.web.workflows.ToutaticeRoutingTaskActionsBean;
 import fr.toutatice.ecm.workflows.integration.constants.ExtendedSeamPrecedence;
 import fr.toutatice.ecm.workflows.integration.constants.WorkflowsConstants;
