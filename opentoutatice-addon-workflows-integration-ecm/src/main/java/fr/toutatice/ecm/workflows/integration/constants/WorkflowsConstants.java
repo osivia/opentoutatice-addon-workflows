@@ -64,6 +64,7 @@ public interface WorkflowsConstants {
 
         {
             add("start_review");
+            add("submit"); // Serial workflow
         }
 
     };
