@@ -1,0 +1,25 @@
+<!-- See documentation at http://doc.nuxeo.com/x/HgIz -->
+<package type="addon" name="open-toutatice-addons-routing-integration" version="@VERSION@">
+	<title>Addon to integrate Routing Workflows in Osivia Portal</title>
+	<description>
+		<p>Allows to integrate Routing Workflows in Osivia Portal</p>
+	</description>
+	<home-page>http://www.osivia.com</home-page>
+	<vendor>Osivia</vendor>
+	<installer restart="true" />
+	<uninstaller restart="true" />
+	<!-- <hotreload-support>false</hotreload-support> -->
+	<!-- <require-terms-and-conditions-acceptance>false</require-terms-and-conditions-acceptance> -->
+	<nuxeo-validation>none</nuxeo-validation>
+	<production-state>production_ready</production-state>
+	<supported>false</supported>
+	<platforms>
+		<platform>cap-@DISTRIB_VERSION@</platform>
+	</platforms>
+	<dependencies>
+		<!-- Dependance sur la plate-forme opentoutatice -->
+		<package>open-toutatice:3.1.0-SNAPSHOT</package>
+	</dependencies>
+	<license>LGPL 2.1</license>
+	<license-url>http://www.gnu.org/licenses/lgpl-2.1.html</license-url>
+</package>
