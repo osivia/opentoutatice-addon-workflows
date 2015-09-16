@@ -10,12 +10,12 @@
 			<operation id="Context.FetchDocument" />
 			<operation id="Notification.SendMail">
 				<param type="string" name="from">expr:Env["mail.from"]</param>
-				<param type="string" name="message">Le document a été approuvé par tous les participants.</param>
+				<param type="string" name="message">template:serialApproved</param>
 				<param type="string" name="subject">expr:@{Env["nuxeo.notification.eMailSubjectPrefix"]}
 					Document approuvé</param>
 				<param type="stringlist" name="to">expr:Fn.getEmail(workflowInitiator)
 				</param>
-				<param type="boolean" name="HTML">false</param>
+				<param type="boolean" name="HTML">true</param>
 				<param type="boolean" name="rollbackOnError">true</param>
 				<param type="string" name="viewId">view_documents</param>
 			</operation>
