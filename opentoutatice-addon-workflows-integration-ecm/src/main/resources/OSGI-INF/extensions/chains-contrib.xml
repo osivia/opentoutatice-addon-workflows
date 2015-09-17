@@ -12,7 +12,7 @@
 				<param type="string" name="from">expr:Env["mail.from"]</param>
 				<param type="string" name="message">template:serialApproved</param>
 				<param type="string" name="subject">expr:@{Env["nuxeo.notification.eMailSubjectPrefix"]}
-					Document approuvé</param>
+					Le document @{Document.title} a été approuvé</param>
 				<param type="stringlist" name="to">expr:Fn.getEmail(workflowInitiator)
 				</param>
 				<param type="boolean" name="HTML">true</param>
