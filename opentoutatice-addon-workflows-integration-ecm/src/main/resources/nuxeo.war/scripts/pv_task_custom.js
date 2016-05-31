@@ -1,4 +1,4 @@
-window.onload = function(e) {
+function customTask() {
 	// Show graph link
 	jQuery("a[onclick='showGraph(\'\');return false;']").parent().attr("style", "display:none");
 	
@@ -12,3 +12,5 @@ window.onload = function(e) {
 	$creatorLink.attr("href","javascript:void(0)");
 	
 }
+
+window.addEventListener("load", customTask);
