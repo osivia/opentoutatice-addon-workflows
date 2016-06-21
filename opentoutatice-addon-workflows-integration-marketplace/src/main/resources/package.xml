@@ -2,7 +2,14 @@
 <package type="addon" name="open-toutatice-addons-workflows-integration" version="@VERSION@">
 	<title>Addon to integrate Routing Workflows in Osivia Portal</title>
 	<description>
-		<p>Allows to integrate Routing Workflows in Osivia Portal</p>
+		<p>Allows to integrate Routing Workflows in Osivia Portal
+		  
+		  _______________________________________________________
+		  
+		  Main fix:
+		  * Onload javascript with compression.
+		  
+		</p>
 	</description>
 	<home-page>http://www.osivia.com</home-page>
 	<vendor>Osivia</vendor>
@@ -18,7 +25,7 @@
 	</platforms>
 	<dependencies>
 		<!-- Dependance sur la plate-forme opentoutatice -->
-		<package>open-toutatice:3.1.3</package>
+		<package>open-toutatice:3.2.2</package>
 	</dependencies>
 	<license>LGPL 2.1</license>
 	<license-url>http://www.gnu.org/licenses/lgpl-2.1.html</license-url>
