@@ -7,5 +7,6 @@ Bundle-Category: stateful
 Nuxeo-Component: OSGI-INF/extensions/theme-contrib.xml,
  OSGI-INF/extensions/workflows-service-contrib.xml,
  OSGI-INF/extensions/chains-contrib.xml,
- OSGI-INF/extensions/notifications-contrib.xml
+ OSGI-INF/extensions/notifications-contrib.xml,
+ OSGI-INF/extensions/default-nx-wf/tasks-layouts-contrib.xml
  

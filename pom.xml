@@ -11,14 +11,47 @@
 	<version>2.0-SNAPSHOT</version>
 
 	<properties>
-		<nuxeo.version>6.0-HF30</nuxeo.version>
-		<nuxeo.opentoutatice.version>3.2.2</nuxeo.opentoutatice.version>
+		<nuxeo.version>6.0-HF34</nuxeo.version>
+		<nuxeo.opentoutatice.version>3.4.0-SNAPSHOT</nuxeo.opentoutatice.version>
 	</properties>
 
 	<modules>
 	   <module>opentoutatice-addon-workflows-integration-ecm</module>
 	   <module>opentoutatice-addon-workflows-integration-marketplace</module>
 	</modules>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.nuxeo.ecm.distribution</groupId>
+				<artifactId>nuxeo-distribution</artifactId>
+				<version>${nuxeo.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+	
+			<dependency>
+				<groupId>opentoutatice-ecm.platform</groupId>
+				<artifactId>opentoutatice-ecm-platform-core</artifactId>
+				<version>${nuxeo.opentoutatice.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>opentoutatice-ecm.platform</groupId>
+				<artifactId>opentoutatice-ecm-platform-services</artifactId>
+				<version>${nuxeo.opentoutatice.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>opentoutatice-ecm.platform</groupId>
+				<artifactId>opentoutatice-ecm-platform-web</artifactId>
+				<version>${nuxeo.opentoutatice.version}</version>
+			</dependency>
+			 <dependency>
+                <groupId>opentoutatice-ecm.platform</groupId>
+                <artifactId>opentoutatice-ecm-portal-views</artifactId>
+                <version>${nuxeo.opentoutatice.version}</version>
+            </dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<build>
 		<plugins>

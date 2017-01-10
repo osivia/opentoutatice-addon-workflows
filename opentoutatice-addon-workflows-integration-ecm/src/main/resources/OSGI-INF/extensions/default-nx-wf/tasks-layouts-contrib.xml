@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<component name="fr.toutatice.ecm.platform.wf.integration.nx.layouts">
+
+	<documentation>
+		Customization of choose participants tasks for Nuxeo
+		validation workflows (serial and parrallel).
+	</documentation>
+
+	<require>studio.extensions.nuxeo-routing-default</require>
+
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="layouts">
+
+		<!-- Choose participant task for parallel validation workflow of Nuxeo -->
+		<layout name="customNxParallelWf@taskLayout">
+			<aliases>
+				<alias>Task2556@taskLayout</alias>
+			</aliases>
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+			<rows>
+				<row>
+					<properties mode="any">
+						<property name="nxl_colspan_0">1</property>
+					</properties>
+					<widget>participants_parallel</widget>
+				</row>
+				<row>
+					<properties mode="any">
+						<property name="nxl_colspan_0">1</property>
+					</properties>
+					<widget>comment</widget>
+				</row>
+				<row>
+					<properties mode="any">
+						<property name="nxl_colspan_0">1</property>
+					</properties>
+					<widget>end_date</widget>
+				</row>
+			</rows>
+			<widget name="comment" type="textarea">
+				<labels>
+					<label mode="any">wf.parallelDocumentReview.comment</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>['comment']</field>
+				</fields>
+			</widget>
+			<widget name="end_date" type="datetime">
+				<labels>
+					<label mode="any">wf.parallelDocumentReview.endDate</label>
+				</labels>
+				<helpLabels>
+					<label mode="any">wf.parallelDocumentReview.endDate.help</label>
+				</helpLabels>
+				<translated>true</translated>
+				<fields>
+					<field>['end_date']</field>
+				</fields>
+				<properties widgetMode="edit">
+					<property name="required">#{request.getParameter('button') ==
+						'start_review'}
+					</property>
+				</properties>
+			</widget>
+		</layout>
+
+		<!-- Choose participant task for serial validation workflow of Nuxeo -->
+		<layout name="customNxSerialWf@taskLayout">
+			<aliases>
+				<alias>Task38e@taskLayout</alias>
+			</aliases>
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+			<rows>
+				<row>
+					<properties mode="any">
+						<property name="nxl_colspan_0">1</property>
+					</properties>
+					<widget>participants_serial</widget>
+				</row>
+				<row>
+					<properties mode="any">
+						<property name="nxl_colspan_0">1</property>
+					</properties>
+					<widget>validationOrReview</widget>
+				</row>
+				<row>
+					<properties mode="any">
+						<property name="nxl_colspan_0">1</property>
+					</properties>
+					<widget>comment</widget>
+				</row>
+			</rows>
+			<widget name="validationOrReview" type="selectOneDirectory">
+				<labels>
+					<label mode="any">wf.serialDocumentReview.validationOrSimpleReview
+					</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>['validationOrReview']</field>
+				</fields>
+				<widgetModes>
+					<mode value="edit">#{currentDocument. currentLifeCycleState
+						=='project'?'edit':'hidden'}</mode>
+				</widgetModes>
+				<properties widgetMode="edit">
+					<property name="localize">true</property>
+					<property name="directoryName">WorkflowType</property>
+					<property name="required">#{request.getParameter('button') ==
+						'start_review'}</property>
+				</properties>
+				<properties widgetMode="view">
+					<property name="localize">true</property>
+					<property name="directoryName">WorkflowType</property>
+				</properties>
+			</widget>
+			<widget name="comment" type="textarea">
+				<labels>
+					<label mode="any">wf.serialDocumentReview.comment</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>['comment']</field>
+				</fields>
+			</widget>
+		</layout>
+
+	</extension>
+
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="widgets">
+
+		<!-- Parallel review widgets -->
+		<widget name="participants_parallel" type="multipleUsersSuggestionWithPermission">
+			<labels>
+				<label mode="any">wf.parallelDocumentReview.ParticipantsOnTheReview
+				</label>
+			</labels>
+			<helpLabels>
+				<label mode="edit">
+					wf.parallelDocumentReview.ParticipantsOnTheReview.helpLabel
+				</label>
+			</helpLabels>
+			<translated>true</translated>
+			<fields>
+				<field>['participants']</field>
+			</fields>
+			<properties widgetMode="edit">
+				<property name="documentId">#{currentDocument.id}</property>
+				<property name="orderable">true</property>
+				<property name="permission">Write</property>
+				<property name="searchType"></property>
+				<property name="placeholder">label.security.search</property>
+				<property name="width">70%</property>
+				<property name="prefixed">true</property>
+				<property name="required">#{request.getParameter('button') ==
+					'start_review'}
+				</property>
+			</properties>
+		</widget>
+
+		<!-- Serial review widgets -->
+		<widget name="participants_serial" type="multipleUsersSuggestionWithPermission">
+			<labels>
+				<label mode="any">wf.serialDocumentReview.ParticipantsOnTheReview
+				</label>
+			</labels>
+			<helpLabels>
+				<label mode="edit">
+					wf.serialDocumentReview.ParticipantsOnTheReview.helpLabel
+				</label>
+			</helpLabels>
+			<translated>true</translated>
+			<fields>
+				<field>['participants']</field>
+			</fields>
+			<properties widgetMode="edit">
+				<property name="documentId">#{currentDocument.id}</property>
+				<property name="orderable">true</property>
+				<property name="permission">Write</property>
+				<property name="searchType"></property>
+				<property name="placeholder">label.security.search</property>
+				<property name="width">70%</property>
+				<property name="helpLabel">wf.serialDocumentReview.ParticipantsOnTheReview.order
+				</property>
+				<property name="prefixed">true</property>
+				<property name="required">#{request.getParameter('button') ==
+					'start_review'}
+				</property>
+			</properties>
+		</widget>
+
+
+	</extension>
+
+</component>
