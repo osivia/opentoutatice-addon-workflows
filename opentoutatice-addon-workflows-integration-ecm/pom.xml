@@ -29,10 +29,6 @@
 			<groupId>opentoutatice-ecm.platform</groupId>
 			<artifactId>opentoutatice-ecm-platform-web</artifactId>
 		</dependency>
-		<dependency>
-            <groupId>opentoutatice-ecm.platform</groupId>
-            <artifactId>opentoutatice-ecm-portal-views</artifactId>
-        </dependency>
 	</dependencies>
 
 	<build>

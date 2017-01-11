@@ -23,8 +23,8 @@ import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Scope;
 import org.nuxeo.runtime.api.Framework;
 
-import fr.toutatice.ecm.platform.portalviews.bean.ToutaticeSkinBean;
 import fr.toutatice.ecm.platform.service.portalviews.adapter.WidgetsAdapterService;
+import fr.toutatice.ecm.platform.web.userservices.ToutaticeSkinBean;
 import fr.toutatice.ecm.workflows.integration.constants.ExtendedSeamPrecedence;
 import fr.toutatice.ecm.workflows.integration.constants.WorkflowsConstants;
 
