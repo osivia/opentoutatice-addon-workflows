@@ -25,6 +25,6 @@ package fr.toutatice.ecm.workflows.integration.constants;
 public interface ExtendedSeamPrecedence {
     
 	/** Addon precedence. */
-    int ADD_ON = fr.toutatice.ecm.platform.core.constants.ExtendedSeamPrecedence.INHERIT_TOUTATICE + 1;
+    int ADD_ON = fr.toutatice.ecm.platform.core.constants.ExtendedSeamPrecedence.TOUTATICE + 1;
 
 }
