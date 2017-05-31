@@ -11,7 +11,8 @@
 	<version>4.6-SNAPSHOT</version>
 
 	<properties>
-		<nuxeo.version>6.0-HF34</nuxeo.version>
+		<nuxeo.version>6.0-HF37</nuxeo.version>
+		<nuxeo.cap.version>6.0</nuxeo.cap.version>
 		<nuxeo.opentoutatice.version>4.6-SNAPSHOT</nuxeo.opentoutatice.version>
 	</properties>
 
@@ -24,7 +25,7 @@
 		<dependencies>
 			<dependency>
 				<groupId>org.nuxeo.ecm.distribution</groupId>
-				<artifactId>nuxeo-distribution</artifactId>
+				<artifactId>nuxeo-distribution-cap</artifactId>
 				<version>${nuxeo.version}</version>
 				<type>pom</type>
 				<scope>import</scope>

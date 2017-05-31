@@ -13,15 +13,10 @@
 	<packaging>zip</packaging>
 	<name>Workflows integration plugin - marketplace</name>
 
-	<properties>
-		<nuxeo.cap.distribution.version>6.0</nuxeo.cap.distribution.version>
-	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.nuxeo.ecm.distribution</groupId>
-			<artifactId>nuxeo-distribution</artifactId>
-			<version>${nuxeo.version}</version>
+			<artifactId>nuxeo-distribution-cap</artifactId>
 			<type>pom</type>
 			<scope>import</scope>
 		</dependency>
