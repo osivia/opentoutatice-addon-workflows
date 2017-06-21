@@ -108,13 +108,15 @@
 				</fields>
 				<widgetModes>
 					<mode value="edit">#{currentDocument. currentLifeCycleState
-						=='project'?'edit':'hidden'}</mode>
+						=='project'?'edit':'hidden'}
+					</mode>
 				</widgetModes>
 				<properties widgetMode="edit">
 					<property name="localize">true</property>
 					<property name="directoryName">WorkflowType</property>
 					<property name="required">#{request.getParameter('button') ==
-						'start_review'}</property>
+						'start_review'}
+					</property>
 				</properties>
 				<properties widgetMode="view">
 					<property name="localize">true</property>
@@ -131,6 +133,19 @@
 				</fields>
 			</widget>
 		</layout>
+
+		<layout name="task_additional_actions_layout">
+	      <templates>
+	        <template mode="any">
+	          /layouts/layout_div_template.xhtml
+	        </template>
+	      </templates>
+	      <rows>
+	        <row>
+	          <widget>reassign_task_widget</widget>
+	        </row>
+	      </rows>
+	    </layout>
 
 	</extension>
 
@@ -156,7 +171,7 @@
 				<property name="documentId">#{currentDocument.id}</property>
 				<property name="orderable">true</property>
 				<property name="permission">Write</property>
-				<property name="searchType"></property>
+				<property name="searchType">USER_TYPE</property>
 				<property name="placeholder">label.security.search</property>
 				<property name="width">70%</property>
 				<property name="prefixed">true</property>
@@ -185,7 +200,7 @@
 				<property name="documentId">#{currentDocument.id}</property>
 				<property name="orderable">true</property>
 				<property name="permission">Write</property>
-				<property name="searchType"></property>
+				<property name="searchType">USER_TYPE</property>
 				<property name="placeholder">label.security.search</property>
 				<property name="width">70%</property>
 				<property name="helpLabel">wf.serialDocumentReview.ParticipantsOnTheReview.order
