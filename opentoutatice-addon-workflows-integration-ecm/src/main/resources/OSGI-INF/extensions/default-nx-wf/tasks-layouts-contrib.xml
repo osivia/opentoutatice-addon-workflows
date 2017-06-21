@@ -171,7 +171,7 @@
 				<property name="documentId">#{currentDocument.id}</property>
 				<property name="orderable">true</property>
 				<property name="permission">Write</property>
-				<property name="searchType"></property>
+				<property name="searchType">USER_TYPE</property>
 				<property name="placeholder">label.security.search</property>
 				<property name="width">70%</property>
 				<property name="prefixed">true</property>
@@ -200,7 +200,7 @@
 				<property name="documentId">#{currentDocument.id}</property>
 				<property name="orderable">true</property>
 				<property name="permission">Write</property>
-				<property name="searchType"></property>
+				<property name="searchType">USER_TYPE</property>
 				<property name="placeholder">label.security.search</property>
 				<property name="width">70%</property>
 				<property name="helpLabel">wf.serialDocumentReview.ParticipantsOnTheReview.order
