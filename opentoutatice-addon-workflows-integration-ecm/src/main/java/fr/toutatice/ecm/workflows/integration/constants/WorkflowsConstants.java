@@ -87,7 +87,7 @@ public interface WorkflowsConstants {
     /** Redirect view on canel workflow. */
     String PV_WORKFLOW_ACTION_DONE = "action_done";
     /** View id of workflow choice facelet. */
-    public static final String PV_WF_CHOICE = "choose_wf";
+    String PV_WF_CHOICE = "choose_wf";
     /** Current task portal view id. */
     String PV_CURRENT_TASK = "current_task";
 
