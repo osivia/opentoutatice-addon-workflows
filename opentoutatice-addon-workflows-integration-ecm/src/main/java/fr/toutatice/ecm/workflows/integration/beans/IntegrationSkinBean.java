@@ -17,6 +17,7 @@
  */
 package fr.toutatice.ecm.workflows.integration.beans;
 
+import org.apache.commons.lang.StringUtils;
 import org.jboss.seam.ScopeType;
 import org.jboss.seam.annotations.Install;
 import org.jboss.seam.annotations.Name;
@@ -52,7 +53,8 @@ public class IntegrationSkinBean extends ToutaticeSkinBean {
         WidgetsAdapterService widgetsAdapterService = Framework.getLocalService(WidgetsAdapterService.class);
         String currentPortalView = widgetsAdapterService.getCurrentPortalView();
 
-        if (currentPortalView.contains(WorkflowsConstants.PV_WF_CHOICE) || currentPortalView.contains(WorkflowsConstants.PV_CURRENT_TASK)) {
+        if (StringUtils.contains(currentPortalView, WorkflowsConstants.PV_WF_CHOICE)
+                || StringUtils.contains(currentPortalView, WorkflowsConstants.PV_CURRENT_TASK)) {
             conversationSkean = DEFAULT_SKIN;
         }
         return conversationSkean;
