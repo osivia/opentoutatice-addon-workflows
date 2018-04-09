@@ -1,0 +1,18 @@
+<component name="fr.toutatice.ecm.platform.wf.integration.nx.pv.adapter">
+
+	<require>fr.toutatice.ecm.platform.service.portalviews.adapter.contrib
+	</require>
+	<require>fr.toutatice.ecm.platform.wf.integration.nx.layouts</require>
+
+	<extension
+		target="fr.toutatice.ecm.platform.service.portalviews.adapter.WidgetsAdapterService"
+		point="adapter">
+
+		<mappings>
+			<mapping nxWidget="end_date" pvWidget="end_date" />
+			<mapping nxWidget="task_start_date" pvWidget="task_start_date" />
+			<mapping nxWidget="task_due_date" pvWidget="task_due_date" />
+		</mappings>
+
+	</extension>
+</component>

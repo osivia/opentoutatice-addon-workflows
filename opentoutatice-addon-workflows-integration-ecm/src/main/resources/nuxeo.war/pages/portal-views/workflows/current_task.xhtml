@@ -1,0 +1,41 @@
+<ui:composition template="/pages/nuxeo_page.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:nxr="http://nuxeo.org/nxweb/resources">
+
+	<ui:param name="pageName" value="wf-portal-view" />
+
+	<ui:define name="basic body">
+
+		<div class="container">
+			<div class="ttc-form-control">
+				<ui:include src="/pages/portal-views/parts/message_banner.xhtml" />
+				<nxl:widget name="current_route_panel_left" mode="view" />
+			</div>
+		</div>
+		
+		<h:outputScript target="#{pageJsTarget}">
+			<!-- Disable links -->
+			$userLink = jQuery("div.UserSuggestionInput > a");
+			$userLink.attr("style","pointer-events:none; cursor:default;");
+			$userLink.attr("href","javascript:void(0)");
+
+		    $creatorLink = jQuery("span.creator > a");
+			$creatorLink.attr("style","pointer-events:none; cursor:default;");
+			$creatorLink.attr("href","javascript:void(0)"); 
+		
+			<!-- Post to Portal -->
+			var parent_url = '#{pageBean.fromUrl}';
+			var currentDocumentId = '#{currentDocument.id}';
+			var isLive = '#{documentActions.live}';
+	
+			XD.postMessage('currentDocumentId=' + currentDocumentId, parent_url,
+					parent);
+			XD.postMessage('live=' + isLive, parent_url, parent);
+		</h:outputScript>
+
+	</ui:define>
+
+</ui:composition>

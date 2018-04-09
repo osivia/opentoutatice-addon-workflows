@@ -24,7 +24,7 @@ import static org.jboss.seam.ScopeType.CONVERSATION;
 import org.jboss.seam.annotations.Install;
 import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Scope;
-import org.nuxeo.ecm.core.api.ClientException;
+import org.nuxeo.ecm.core.api.NuxeoException;
 import org.nuxeo.ecm.core.api.DocumentModel;
 import org.nuxeo.ecm.core.api.IdRef;
 import org.nuxeo.ecm.platform.task.Task;
@@ -49,7 +49,7 @@ public class IntegrationRoutingTaskActionsBean extends ToutaticeRoutingTaskActio
     private static final long serialVersionUID = -4786832650539519266L;
 
     @Override
-    public String endTask(Task task) throws ClientException {
+    public String endTask(Task task) throws NuxeoException {
 
         String view = MainTabsActions.DEFAULT_VIEW;
 

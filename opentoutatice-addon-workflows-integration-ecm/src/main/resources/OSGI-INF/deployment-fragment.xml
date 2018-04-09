@@ -4,34 +4,31 @@
  	
 	<require>fr.toutatice.ecm.platform.services</require>
 	
-	<extension target="faces-config#NAVIGATION">
-		
-		<navigation-case>
-			<from-outcome>choose_wf</from-outcome>
-			<to-view-id>/pv_workflows/choose_wf.xhtml</to-view-id>
-		</navigation-case>
-		
-		<navigation-case>
-			<from-outcome>current_task</from-outcome>
-			<to-view-id>/pv_workflows/current_task.xhtml</to-view-id>
-		</navigation-case>
-		
-		<navigation-case>
-			<from-outcome>action_done</from-outcome>
-			<to-view-id>/pv_workflows/action_done.xhtml</to-view-id>
-		</navigation-case>
-		
-	</extension>
-
-	<extension target="pages#PAGES">
-	</extension>
-
-	<extension target="application#MODULE">
+		<extension target="application#MODULE">
 		<module>
 			<java>${bundle.fileName}</java>
 		</module>
 	</extension>
 	
+	<extension target="faces-config#NAVIGATION">
+		
+		<navigation-case>
+			<from-outcome>choose_wf</from-outcome>
+			<to-view-id>/pages/portal-views/workflows/choose_wf.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>current_task</from-outcome>
+			<to-view-id>/pages/portal-views/workflows/current_task.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>action_done</from-outcome>
+			<to-view-id>/pages/portal-views/done/pv_done.xhtml</to-view-id>
+		</navigation-case>
+		
+	</extension>
+
 	<install>
 		<unzip from="${bundle.fileName}" to="/">
 			<include>nuxeo.war/**</include>

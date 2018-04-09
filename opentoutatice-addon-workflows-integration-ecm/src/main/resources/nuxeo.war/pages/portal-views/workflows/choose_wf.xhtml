@@ -1,0 +1,24 @@
+<ui:composition template="/pages/portal-views/pv_page.xhtml"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:nxl="http://nuxeo.org/nxforms/layout"
+  	xmlns:nxr="http://nuxeo.org/nxweb/resources">
+
+	<ui:define name="pv body">
+
+		<div class="jumbotron">
+			<h:form enctype="multipart/form-data" id="choose_wf"
+				class="form form-horizontal" role="form">
+				<div class="form-group">
+					<div class="ttc-form-control col-sm-12 choose-wf">
+						<nxl:widget name="start_route_widget" mode="edit"
+							value="#{routingActions}" />
+					</div>
+				</div>
+			</h:form>
+		</div>
+
+	</ui:define>
+
+</ui:composition>

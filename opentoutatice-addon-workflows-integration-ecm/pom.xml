@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>opentoutatice-ecm.workflows-integration</groupId>
 		<artifactId>opentoutatice-addon-workflows-integration-parent</artifactId>
-		<version>4.6</version>
+		<version>4.8-SNAPSHOT</version>
 	</parent>
 
 	<properties>
@@ -57,7 +57,7 @@
                     <outputDirectory>${project.basedir}/src/main/resources/nuxeo.war/css</outputDirectory>
                     <compress>true</compress>
                     <includes>
-                        <include>galaxy-bootstrap.less</include>
+                        <include>pv-wf.less</include>
                     </includes>
                     <outputFileFormat>{fileName}.min.css</outputFileFormat>
                 </configuration>
@@ -68,7 +68,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
+			</plugin>
 		</plugins>
 	</build>
 

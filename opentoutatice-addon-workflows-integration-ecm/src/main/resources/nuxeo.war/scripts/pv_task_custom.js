@@ -13,4 +13,4 @@ function customTask() {
 	
 }
 
-window.addEventListener("load", customTask);
+customTask();

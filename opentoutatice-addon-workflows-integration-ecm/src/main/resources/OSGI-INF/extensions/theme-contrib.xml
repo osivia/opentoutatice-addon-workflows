@@ -1,23 +1,30 @@
-<?xml version="1.0"?>
 <component name="fr.toutatice.ecm.platform.wf.integration.theme">
+	
+	<require>org.nuxeo.theme.nuxeo.webapp</require>
+	<require>org.opentoutatice.jsf.ui.portal.views.theme</require>
 
-	<require>fr.toutatice.ecm.platform.responsive.portalviews.theme</require>
+	<extension target="org.nuxeo.theme.styling.service" point="pages">
 
-	<extension target="org.nuxeo.theme.services.ThemeService"
-		point="applications">
+		<page name="wf-portal-view" charset="utf-8">
+			<defaultFlavor>default</defaultFlavor>
+			<resources>
+				<bundle>nuxeo_includes</bundle>
+				<bundle>nuxeo_sassCss</bundle>
+				<!-- <resource>bootstrap.min.js</resource>
+				<bundle>pv_date_picker</bundle> -->
+				<resource>pv-wf.min.css</resource> 
+				<resource>postmessage.js</resource>
+			</resources>
+		</page>
 
-		<application root="${org.nuxeo.ecm.contextPath}"
-			template-engine="jsf-facelets">
+	</extension>
 
-			<view id="/pv_workflows/choose_wf.xhtml">
-				<theme>galaxy/popup</theme>
-			</view>
-			
-			<view id="/pv_workflows/current_task.xhtml">
-				<theme>galaxy/popup</theme>
-			</view>
-			
-		</application>
+	<extension target="org.nuxeo.ecm.platform.WebResources"
+		point="resources">
+		
+		<resource name="pv-wf.min.css">
+			<uri>/css/pv-wf.min.css</uri>
+		</resource>
 
 	</extension>
 

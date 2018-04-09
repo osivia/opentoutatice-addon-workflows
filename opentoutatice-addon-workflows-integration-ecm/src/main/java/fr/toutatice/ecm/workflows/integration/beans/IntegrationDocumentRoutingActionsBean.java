@@ -24,7 +24,7 @@ import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Install;
 import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Scope;
-import org.nuxeo.ecm.core.api.ClientException;
+import org.nuxeo.ecm.core.api.NuxeoException;
 
 import fr.toutatice.ecm.platform.service.portalviews.adapter.WidgetsAdapterService;
 import fr.toutatice.ecm.platform.web.workflows.ToutaticeDocumentRoutingActionsBean;
@@ -41,50 +41,50 @@ import fr.toutatice.ecm.workflows.integration.constants.WorkflowsConstants;
 public class IntegrationDocumentRoutingActionsBean extends ToutaticeDocumentRoutingActionsBean {
 
     private static final long serialVersionUID = 1074863841271697758L;
-    
-    
+
+
     /** Widgets adaptor service. */
     @In(create = true)
     WidgetsAdapterService wgtSrv;
-    
-    /** 
-     * Initialize portal views. 
+
+    /**
+     * Initialize portal views.
      */
     @Create
     public void initialize() throws Exception {
         wgtSrv.addPortalViewsIds(WorkflowsConstants.PV_WF_CHOICE, WorkflowsConstants.PV_CURRENT_TASK);
     }
-    
+
     /**
      * Override to be able to return a viewId,
      * according to PortalView context.
      */
     @Override
-    public String startRouteRelatedToCurrentDocument() throws ClientException {
-        
+    public String startRouteRelatedToCurrentDocument() throws NuxeoException {
+
         String viewId = super.startRouteRelatedToCurrentDocument();
-        
-        if(wgtSrv.isInPortalViewContext()){
+
+        if (wgtSrv.isInPortalViewContext()) {
             viewId = WorkflowsConstants.PV_CURRENT_TASK;
         }
-        
+
         return viewId;
     }
-    
+
     /**
      * Override for portal view redirection.
      */
     @Override
-    public String cancelRoute() throws ClientException {
-        
+    public String cancelRoute() throws NuxeoException {
+
         String viewId = super.cancelRoute();
-        
-        if(wgtSrv.isInPortalViewContext()){
+
+        if (wgtSrv.isInPortalViewContext()) {
             viewId = WorkflowsConstants.PV_WORKFLOW_ACTION_DONE;
         }
-        
+
         return viewId;
-        
+
     }
 
 }

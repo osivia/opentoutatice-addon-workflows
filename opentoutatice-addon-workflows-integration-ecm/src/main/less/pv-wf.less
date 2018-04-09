@@ -1,0 +1,225 @@
+//@import "bootstrap/bootstrap.less";
+
+@import "bootstrap/variables.less";
+@import "bootstrap/mixins.less";
+
+// Date time pickers
+//@import "bootstrap/datepicker3.less";
+//@import "bootstrap/timepicker.less";
+
+body {
+    &, * {
+        color: @text-color !important;
+        font-family: @font-family-base !important;
+        font-size: @font-size-base !important;
+        line-height: @line-height-base !important;
+    }
+}
+
+.choose-wf {
+	td > select {
+		margin-bottom: 15px !important;
+		background-color: #fff !important;
+	}
+}
+
+
+.summaryTitle {
+    color: @text-color !important;
+    
+    margin-bottom: @line-height-computed !important;
+    font-size: floor((@font-size-base * 1.15)) !important;
+    font-weight: 300 !important;
+    line-height: 1.4 !important;
+    padding-left: 15px !important;
+    
+    @media (min-width: @screen-sm-min) {
+        font-size: (@font-size-base * 1.5) !important;
+    }
+}
+
+
+.description_block {
+    &, * {
+        &:not(.summaryTitle) {
+            color: @accessible-gray-light !important;
+            font-family: @font-family-base !important;
+            font-size: @font-size-base !important;
+            line-height: @line-height-base !important;
+        }
+    }
+}
+
+
+input , button , select , textarea {
+    font-family: inherit !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+    
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+
+input:not(.button):not(.select2-input), select {
+    display: block !important;
+    width: 100% !important;
+    height: @input-height-base !important;
+    padding: @padding-base-vertical @padding-base-horizontal !important;
+    font-size: @font-size-base !important;
+    line-height: @line-height-base !important;
+    color: @input-color !important;
+    background-color: @input-bg !important;
+    background-image: none !important;
+    border: 1px solid @input-border !important;
+    border-radius: @input-border-radius !important;
+    box-shadow: inset 0 1px 1px fade(#000, 7.5%) !important;
+    
+    transition: ~"border-color ease-in-out .15s, box-shadow ease-in-out .15s" !important;
+    
+    // Form control focus
+    @color-rgba: rgba(red(@input-border-focus), green(@input-border-focus), blue(@input-border-focus), .6);
+    &:focus {
+        border-color: @input-border-focus;
+        outline: 0;
+        box-shadow: ~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @{color-rgba}" !important;
+    }
+
+    // Placeholder
+    &::-moz-placeholder {
+        color: @input-color-placeholder !important;
+        opacity: 1 !important;
+    }
+    &:-ms-input-placeholder {
+        color: @input-color-placeholder !important;
+    }
+    &::-webkit-input-placeholder {
+        color: @input-color-placeholder !important;
+    }
+    
+    &::-ms-expand {
+        border: 0 !important;
+        background-color: transparent !important;
+    }
+    
+    &[disabled] , &[readonly] , fieldset[disabled] & {
+        background-color: @input-bg-disabled !important;
+        opacity: 1 !important;
+    }
+    
+    &[disabled] , fieldset[disabled] & {
+        cursor: @cursor-disabled !important;
+    }
+}
+
+
+.button {
+    & , &.buttonSmall {
+        display: inline-block !important;
+        margin-bottom: 0 !important;
+        font-weight: @btn-font-weight !important;
+        text-align: center !important;
+        vertical-align: middle !important;
+        touch-action: manipulation !important;
+        cursor: pointer !important;
+        background-image: none !important;
+        border: 1px solid transparent !important;
+        white-space: nowrap !important;
+        
+        //.button-size (@padding-base-vertical; @padding-base-horizontal; @font-size-base; @line-height-base; @btn-border-radius-base);
+        padding: @padding-base-vertical @padding-base-horizontal !important;
+        font-size: @font-size-base !important;
+        line-height: @line-height-base !important;
+        border-radius: @btn-border-radius-base !important;
+          
+        //.button-variant(@btn-default-color; @btn-default-bg; @btn-default-border);
+        color: @btn-default-color !important;
+        background-color: @btn-default-bg !important;
+        border-color: @btn-default-border !important;
+        &:focus , &.focus {
+            box-shadow: inherit !important;
+            outline: inherit !important;
+            
+            color: @btn-default-color !important;
+            background-color: darken(@btn-default-bg, 10%) !important;
+            border-color: darken(@btn-default-border, 25%) !important;
+        }
+        &:hover {
+            color: @btn-default-color !important;
+            background-color: darken(@btn-default-bg, 10%) !important;
+            border-color: darken(@btn-default-border, 12%) !important;
+        }
+        &:active , &.active , .open > .dropdown-toggle& {
+            color: @btn-default-color !important;
+            background-color: darken(@btn-default-bg, 10%) !important;
+            border-color: darken(@btn-default-border, 12%) !important;
+            &:hover , &:focus , &.focus {
+                color: @btn-default-color !important;
+                background-color: darken(@btn-default-bg, 17%) !important;
+                border-color: darken(@btn-default-border, 25%) !important;
+            }
+        }
+        &:active , &.active , .open > .dropdown-toggle& {
+            background-image: none !important;
+        }
+        &.disabled , &[disabled] , fieldset[disabled] & {
+            &:hover , &:focus , &.focus {
+                background-color: @btn-default-bg !important;
+                border-color: @btn-default-border !important;
+            }
+        }
+        .badge {
+            color: @btn-default-bg !important;
+            background-color: @btn-default-color !important;
+        }
+        
+        //.user-select (none);
+        user-select: none !important;
+        
+        & , &:active , &.active {
+            &:focus , &.focus {
+                //.tab-focus ();
+                outline: 5px auto -webkit-focus-ring-color !important;
+                outline-offset: -2px !important;
+            }
+        }
+
+        &:hover , &:focus , &.focus {
+            color: @btn-default-color !important;
+            text-decoration: none !important;
+        }
+
+        &:active , &.active {
+            outline: 0 !important;
+            background-image: none !important;
+            box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125) !important;
+        }
+
+        &.disabled , &[disabled] , fieldset[disabled] & {
+            cursor: @cursor-disabled !important;
+            opacity: .65 !important;
+            box-shadow: none !important;
+        }
+
+        a& {
+            &.disabled , fieldset[disabled] & {
+                pointer-events: none !important;
+            }
+        }
+    }
+}
+
+
+.widgetPanel {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    
+    &.grayBox {
+    	padding-left: 0.6em;
+    }
+}
+
+.contentViewTitle > h3 {
+    	padding-left: 0.6em !important;
+    }
+
