@@ -199,7 +199,7 @@
 		point="widgets">
 
 		<!-- Parallel review widgets -->
-		<widget name="participants_parallel" type="multipleUsersSuggestionWithPermission">
+		<widget name="participants_parallel" type="multipleUsersSuggestionInWorkspace">
 			<labels>
 				<label mode="any">wf.parallelDocumentReview.ParticipantsOnTheReview
 				</label>
@@ -228,7 +228,7 @@
 		</widget>
 
 		<!-- Serial review widgets -->
-		<widget name="participants_serial" type="multipleUsersSuggestionWithPermission">
+		<widget name="participants_serial" type="multipleUsersSuggestionInWorkspace">
 			<labels>
 				<label mode="any">wf.serialDocumentReview.ParticipantsOnTheReview
 				</label>
