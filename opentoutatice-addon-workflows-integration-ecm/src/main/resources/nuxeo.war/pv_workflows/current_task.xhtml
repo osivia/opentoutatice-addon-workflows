@@ -20,13 +20,11 @@
             var parent_url = '#{pageBean.fromUrl}';
             var currentDocumentId = '#{currentDocument.id}';
             var isLive = '#{documentActions.live}';
-    		var notificationKey = 'SUCCESS_MESSAGE_MODIFY';
         
             XD.postMessage('currentDocumentId=' + currentDocumentId, parent_url,
                     parent);
             XD.postMessage('live=' + isLive, parent_url, parent);
-    		XD.postMessage('notificationKey=' + notificationKey, parent_url,
-					parent);            
+
         </script>
     </ui:define>
     
